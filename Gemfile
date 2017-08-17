@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
+gem 'google-api-client', '~> 0.11', require: 'google/apis/calendar_v3'
 
 group :development, :test do
   gem 'sqlite3'
