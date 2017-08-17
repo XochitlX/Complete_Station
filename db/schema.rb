@@ -10,13 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814032341) do
+ActiveRecord::Schema.define(version: 20170817183943) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.datetime "start"
     t.datetime "end"
     t.string   "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "medicines", force: :cascade do |t|
+    t.string   "name"
+    t.string   "unit_measurement"
+    t.string   "presentation_to_take"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "periods", force: :cascade do |t|
+    t.datetime "start_day_treatment"
+    t.integer  "days_of_treatment"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "medicine_id"
+    t.integer  "period_id"
+    t.integer  "dose_every"
+    t.integer  "start_hour"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["medicine_id"], name: "index_treatments_on_medicine_id"
+    t.index ["period_id"], name: "index_treatments_on_period_id"
+    t.index ["user_id"], name: "index_treatments_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "password"
+    t.boolean  "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
