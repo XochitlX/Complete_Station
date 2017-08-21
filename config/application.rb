@@ -1,6 +1,3 @@
-
-GOOGLE_KEYS[ENV['APP_NAME_ENV']]
-
 require_relative 'boot'
 
 require 'rails/all'
