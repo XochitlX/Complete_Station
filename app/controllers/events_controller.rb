@@ -16,7 +16,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    p "CREATEE " * 20
+    p @event = Event.new(event_params)
     @event.save
   end
 

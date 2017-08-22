@@ -91,6 +91,6 @@ class FlowsController < ApplicationController
     p params[:calendar_id]
     service.insert_event(params[:calendar_id], event)
 
-    redirect_to events_url(calendar_id: params[:calendar_id])
+    redirect_to events_calendars_url(calendar_id: params[:calendar_id])
   end
 end
