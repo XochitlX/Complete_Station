@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 gem 'google-api-client', '~> 0.11', require: 'google/apis/calendar_v3'
+gem 'twilio-ruby', '5.0.0'
+gem 'rufus-scheduler'
 
 group :development, :test do
   gem 'sqlite3'
