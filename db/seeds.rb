@@ -17,9 +17,9 @@
 #################################
 # Seed for Model user-treatment
 #Userss
-@user1 = User.create(name: "xochitl", password: "xoch", admin: 1)
-@user2 = User.create(name: "july", password: "jul", admin: 0)
-@user3 = User.create(name: "mario", password: "ma", admin: 0)
+@user1 = User.create(name: "xochitl", phone_number: "5532385434", password: "xoch", admin: 1)
+@user2 = User.create(name: "july", phone_number: "5555555555", password: "jul", admin: 0)
+@user3 = User.create(name: "mario", phone_number: "5555555555", password: "ma", admin: 0)
 
 
 #Medicine
@@ -38,6 +38,11 @@ Treatment.create(user_id: @user1.id, medicine_id: @medicine1.id,
 Treatment.create(user_id: @user3.id, medicine_id: @medicine3.id, 
 				period_id: @period2.id, dose_every: 8, start_hour: DateTime.new(2017, 8, 20, 17, 8, 00))
 
+#Reminder
+# hours = ["#{Time.now.strftime('%I:%M %p')}" , "#{(Time.now + 5.minutes).strftime('%I:%M %p')}" , "#{(Time.now + 10.minutes).strftime('%I:%M %p')}" ]
+# Reminder.create(user_id: @user1.id, control: hours)
+#hours = ["#{Time.now}", "#{Time.now + 5.minutes}", "#{Time.now + 10.minutes}"]
+#hours = ["hola", "mundo"]
 
 # def information
 # 	p treatment = Treatment.all
