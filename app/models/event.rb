@@ -22,8 +22,8 @@ class Event < ApplicationRecord
 
     			@client.api.account.messages.create({
       			:from => '+14243389879',
-      			#:to => '+525532385434',
-      			:to => '+525521868770',
+      			:to => '+525532385434',
+      			#:to => '+525521868770',
       			:body => 'Step by step Pruebas minutos V2'
 				})
 				
