@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  root 'visitors#index'
+
+	root 'pages#home'
+
+  	get  '/about',   to: 'pages#about'
+  	get  '/contact', to: 'pages#contact'
+  	get  '/signup',  to: 'users#new'
+    post '/signup',  to: 'users#create'
+
+  	resources :users
+
+  #root 'visitors#index'
+  get 'visitors/index'
   resources :events
 
   get '/redirect', to: 'flows#redirect', as: 'redirect'

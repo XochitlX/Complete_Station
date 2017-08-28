@@ -17,9 +17,9 @@
 #################################
 # Seed for Model user-treatment
 #Userss
-@user1 = User.create(name: "xochitl", phone_number: "5532385434", password: "xoch", admin: 1)
-@user2 = User.create(name: "july", phone_number: "5555555555", password: "jul", admin: 0)
-@user3 = User.create(name: "mario", phone_number: "5555555555", password: "ma", admin: 0)
+@user1 = User.create(name: "xochitl", email: "xochitl@gmail.com", phone_number: "5532385434", password: "xochitl", admin: 1)
+@user2 = User.create(name: "july", email: "july@gmail.com", phone_number: "5555555555", password: "xochitl", admin: 0)
+@user3 = User.create(name: "mario", email: "mario@gmail.com", phone_number: "5555555555", password: "xochitl", admin: 0)
 
 
 #Medicine
