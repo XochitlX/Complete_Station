@@ -4,6 +4,8 @@ class CreateMedicines < ActiveRecord::Migration[5.0]
       t.string :name
 	  t.string :unit_measurement
 	  t.string :presentation_to_take
+	  t.integer :dose
+	  t.integer :dose_every
 
       t.timestamps
     end

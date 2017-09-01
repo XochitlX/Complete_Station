@@ -1,3 +1,8 @@
-$('#remote_container').html('<%= j render "edit" %>');
-$('#edit_event').modal('show');
 
+<% if @admin %>
+	$('#remote_container').html('<%= j render "information" %>');
+	$('.modal').modal('show');
+<% else %>
+	$('#remote_container').html('<%= j render "edit" %>');
+	$('#edit_event').modal('show');
+<% end %>

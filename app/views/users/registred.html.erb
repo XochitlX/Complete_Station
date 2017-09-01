@@ -1,0 +1,82 @@
+
+
+<h1>Administrator</h1>
+
+<div class="container">
+
+    <h3>Info Data</h3>
+
+    <table class="table table-bordered table-striped" >
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <!-- <td>&nbsp;</td> -->
+        </tr>
+        </thead>
+
+<% if @all_user %>
+    <div class="data" > 
+
+    <% @all_user.each do |user| %> 
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.phone_number %></td>
+            
+            <%= form_for :users, url: record_user_path(user.id) do |f| %>  
+                <th><%= f.submit "View Record", class: "btn btn-primary" %></th>
+            <% end %>
+
+            <%= form_for :users, url: to_edit_path(user.id) do |f| %>  
+                <th><%= f.submit "Edit", class: "btn btn-primary" %></th>
+            <% end %>
+
+            <%= form_for :users, url: delete_path(user.id) do |f| %>  
+                <th><%= f.submit "Delete", class: "btn btn-primary" %></th>
+            <% end %>
+
+            
+        </tr>
+	<% end %>
+    </div>
+
+<% end %>
+
+<% if @one_user %>
+    
+    <div class="data" > 
+ 
+        <tr>
+            <td><%= @one_user.name %></td>
+            <td><%= @one_user.email %></td>
+            <td><%= @one_user.phone_number %></td>
+            
+            <%= form_for :users, url: record_user_path(@one_user.id) do |f| %>  
+                <th><%= f.submit "View Record", class: "btn btn-primary" %></th>
+            <% end %>
+
+            <%= form_for :users, url: to_edit_path(@one_user.id) do |f| %>  
+                <th><%= f.submit "Edit", class: "btn btn-primary" %></th>
+            <% end %>
+
+            <%= form_for :users, url: delete_path(@one_user.id) do |f| %>  
+                <th><%= f.submit "Delete", class: "btn btn-primary" %></th>
+            <% end %>
+
+            
+        </tr>
+    <% end %>
+    </div>
+
+
+
+
+</table>
+
+
+

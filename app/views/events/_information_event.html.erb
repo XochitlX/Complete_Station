@@ -1,0 +1,25 @@
+
+<br>
+<h3>Information event</h3>
+<br>
+<table class="table table-bordered table-striped" >
+    <thead>
+<tr>
+    <th>User Name</th>
+    <th>Medicine</th>
+    <th>Date Start</th>
+    <th>Date End</th>
+    <th>Dose</th>
+</tr>
+
+	
+	</thead>
+<tr>
+<td><%= User.find(@treatment_info.user_id).name %></td>
+<td><%= Medicine.find(@treatment_info.medicine_id).name %></td>
+<td><%= @treatment_info.event.start.strftime('%d-%B-%Y  %I:%M %p') %></td>
+<td><%= @treatment_info.event.end.strftime('%d-%B-%Y') %></td>
+<td><%= Medicine.find(@treatment_info.medicine.id).dose %> <%= Medicine.find(@treatment_info.medicine.id).presentation_to_take %> each <%=Medicine.find(@treatment_info.medicine.id).dose_every %>hrs</td>
+</tr>
+
+</table>

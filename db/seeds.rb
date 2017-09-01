@@ -23,20 +23,34 @@
 
 
 #Medicine
-@medicine1 = Medicine.create(name: 'next', unit_measurement: 'mg', presentation_to_take: 'tableta')
-@medicine2 = Medicine.create(name: 'paracetamol', unit_measurement: 'mg', presentation_to_take: 'tableta')
-@medicine3 = Medicine.create(name: 'ambroxol', unit_measurement: 'ml', presentation_to_take: 'liquido')
-
+# @medicine1 = Medicine.create(name: 'next', unit_measurement: 'mg', presentation_to_take: 'tableta')
+# @medicine2 = Medicine.create(name: 'paracetamol', unit_measurement: 'mg', presentation_to_take: 'tableta')
+# @medicine3 = Medicine.create(name: 'ambroxol', unit_measurement: 'ml', presentation_to_take: 'liquido')
+@medicine1 = Medicine.create(name: 'next', unit_measurement: 'mg', presentation_to_take: 'tablet', dose: 1, dose_every: 8)
+@medicine2 = Medicine.create(name: 'paracetamol', unit_measurement: 'mg', presentation_to_take: 'tablet', dose: 1, dose_every: 12)
+@medicine3 = Medicine.create(name: 'ambroxol', unit_measurement: 'ml', presentation_to_take: 'ml', dose: 100, dose_every: 6)
+												
 
 #Period
-@period1 = Period.create(start_day_treatment: DateTime.new(2017, 8, 20, 17, 00, 00), days_of_treatment: 7)
-@period2 = Period.create(start_day_treatment: DateTime.new(2017, 8, 25, 17, 00, 00), days_of_treatment: 15)
+# @period1 = Period.create(start_day_treatment: DateTime.new(2017, 8, 20, 17, 00, 00), days_of_treatment: 7)
+# @period2 = Period.create(start_day_treatment: DateTime.new(2017, 8, 25, 17, 00, 00), days_of_treatment: 15)
+
+# @event1 = Event.create(title: "primero", start: Time.now, end: Time.now, color: "green")
+# @event2 = Event.create(title: "segundo", start: Time.now, end: Time.now, color: "black")
+
 
 #Treatment
-Treatment.create(user_id: @user1.id, medicine_id: @medicine1.id, 
-				period_id: @period1.id, dose_every: 8, start_hour: DateTime.new(2017, 8, 20, 17, 6, 00))
-Treatment.create(user_id: @user3.id, medicine_id: @medicine3.id, 
-				period_id: @period2.id, dose_every: 8, start_hour: DateTime.new(2017, 8, 20, 17, 8, 00))
+# Treatment.create(user_id: @user1.id, medicine_id: @medicine1.id, 
+# 				period_id: @period1.id, dose_every: 8, start_hour: DateTime.new(2017, 8, 20, 17, 6, 00))
+# Treatment.create(user_id: @user3.id, medicine_id: @medicine3.id, 
+# 				period_id: @period2.id, dose_every: 8, start_hour: DateTime.new(2017, 8, 20, 17, 8, 00))
+Treatment.create(user_id: 1, medicine_id: 1, event_id: 1)
+Treatment.create(user_id: 2, medicine_id: 3, event_id: 2)
+
+
+
+
+
 
 #Reminder
 # hours = ["#{Time.now.strftime('%I:%M %p')}" , "#{(Time.now + 5.minutes).strftime('%I:%M %p')}" , "#{(Time.now + 10.minutes).strftime('%I:%M %p')}" ]

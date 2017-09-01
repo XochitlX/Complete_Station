@@ -12,6 +12,7 @@
  *
  *= require fullcalendar
  *= require daterangepicker
+ *= require hover
  *= require_tree .
  *= require_self
  */

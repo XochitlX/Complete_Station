@@ -1,7 +1,14 @@
 
-<h2>Serán los usuarios dependientes de este admin</h2>
-
 <% provide(:title, @user.name) %>
+
+
+<% if current_user.admin %>
+<h1>Welcome Administrator</h1>
+<% else %>
+<h1>Welcome¡</h1>
+<% end %>
+
+
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
@@ -12,4 +19,22 @@
     </section>
   </aside>
 </div>
+
+
+<div class="row">
+  <aside class="col-md-4">
+	<%= form_for :visitors, url: view_path do |f| %>  
+    	<%= f.submit "Calendar", class: "btn btn-primary" %>
+	<% end %>
+  </aside>
+</div>
+
+<br>
+
+<% if @all_user %>
+  <% render "registred" %>
+<% end %>
+
+
+
 

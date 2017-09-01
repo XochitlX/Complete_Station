@@ -25,36 +25,34 @@ ActiveRecord::Schema.define(version: 20170824173250) do
     t.string   "name"
     t.string   "unit_measurement"
     t.string   "presentation_to_take"
+    t.integer  "dose"
+    t.integer  "dose_every"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
 
   create_table "periods", force: :cascade do |t|
-    t.datetime "start_day_treatment"
-    t.integer  "days_of_treatment"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reminders", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "treatment_id"
     t.string   "control"
     t.string   "control_missing"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["user_id"], name: "index_reminders_on_user_id"
+    t.index ["treatment_id"], name: "index_reminders_on_treatment_id"
   end
 
   create_table "treatments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "medicine_id"
-    t.integer  "period_id"
-    t.integer  "dose_every"
-    t.integer  "start_hour"
+    t.integer  "event_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["event_id"], name: "index_treatments_on_event_id"
     t.index ["medicine_id"], name: "index_treatments_on_medicine_id"
-    t.index ["period_id"], name: "index_treatments_on_period_id"
     t.index ["user_id"], name: "index_treatments_on_user_id"
   end
 
@@ -63,9 +61,10 @@ ActiveRecord::Schema.define(version: 20170824173250) do
     t.string   "email"
     t.string   "phone_number"
     t.string   "password_digest"
-    t.boolean  "admin"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "remember_digest"
+    t.boolean  "admin",           default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end

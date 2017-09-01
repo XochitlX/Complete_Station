@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '5.0.0'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -11,6 +11,9 @@ gem 'google-api-client', '~> 0.11', require: 'google/apis/calendar_v3'
 gem 'twilio-ruby', '5.0.0'
 gem 'rufus-scheduler'
 gem 'bcrypt'
+gem 'bootstrap-sass'
+gem 'hover-rails'
+
 
 group :development, :test do
   gem 'sqlite3'
